@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useMemo } from 'react';
 import { BookOpen, Flame, LayoutGrid, Library, Search, UserRound, Zap } from 'lucide-react';
+import { Logo } from '@/components/Logo';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Kbd } from '@/components/ui/badge';
 import { Tooltip } from '@/components/ui/tooltip';
@@ -38,9 +39,7 @@ export function Navbar() {
       <header className="sticky top-0 z-50 border-b border-line bg-background/75 backdrop-blur-xl backdrop-saturate-150">
         <div className="mx-auto flex h-14 max-w-6xl items-center gap-3 px-4 sm:px-6">
           <Link href="/" className="flex shrink-0 items-center gap-2">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-zinc-900 font-serif text-lg text-white italic dark:bg-white dark:text-zinc-900">
-              L
-            </span>
+            <Logo className="h-7 w-7" />
             <span className="hidden font-serif text-xl tracking-tight sm:inline">Lexicon</span>
           </Link>
 
