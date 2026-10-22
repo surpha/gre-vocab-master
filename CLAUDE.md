@@ -45,5 +45,6 @@ npm run lint         # eslint
 
 - **Add words or a new word bank:** follow [docs/ADDING_WORDS.md](docs/ADDING_WORDS.md).
 - **Deploy or configure auth:** follow [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
+- **Pick up a new feature:** see [docs/ROADMAP.md](docs/ROADMAP.md). Each idea lists the files it touches; move it to Done when shipped.
 - **New quiz format:** add it to `QuizFormat` and `QUIZ_FORMATS` in `src/lib/quiz-engine.ts`, handle it in `buildQuestionForFormat`, and render the prompt in `PromptHeader` (`src/components/quiz/QuizRunner.tsx`).
 - **New synced field:** add it to `UserWordProgress`, the store, `toRow`/`fromRow` in `src/lib/supabase.ts`, and an idempotent `alter table` in `schema.sql`.
