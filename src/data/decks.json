@@ -1,0 +1,432 @@
+[
+  {
+    "deckId": 1,
+    "title": "Deck 1",
+    "wordCount": 50,
+    "topThemes": [
+      "Deceptive / Dishonest",
+      "Harsh Criticism / Verbal Attack",
+      "Stubborn / Unyielding"
+    ]
+  },
+  {
+    "deckId": 2,
+    "title": "Deck 2",
+    "wordCount": 50,
+    "topThemes": [
+      "Stubborn / Unyielding",
+      "Talkative / Wordy",
+      "Foreshadow / Predict"
+    ]
+  },
+  {
+    "deckId": 3,
+    "title": "Deck 3",
+    "wordCount": 50,
+    "topThemes": [
+      "Angry / Easily Irritated",
+      "Vague or Confusing Speech",
+      "Calm / Composed"
+    ]
+  },
+  {
+    "deckId": 4,
+    "title": "Deck 4",
+    "wordCount": 50,
+    "topThemes": [
+      "Praise / Approval",
+      "Abundant / Plentiful",
+      "Bitterness / Hostility"
+    ]
+  },
+  {
+    "deckId": 5,
+    "title": "Deck 5",
+    "wordCount": 50,
+    "topThemes": [
+      "Government, Law & Legal Proceedings",
+      "Hate / Strong Dislike",
+      "Increase / Emphasize"
+    ]
+  },
+  {
+    "deckId": 6,
+    "title": "Deck 6",
+    "wordCount": 50,
+    "topThemes": [
+      "Apathy / Indifference",
+      "Beginner / Inexperienced",
+      "Courage / Boldness"
+    ]
+  },
+  {
+    "deckId": 7,
+    "title": "Deck 7",
+    "wordCount": 50,
+    "topThemes": [
+      "Honest / Sincere",
+      "Ordinary / Unremarkable",
+      "Reticent / Reserved in Speech"
+    ]
+  },
+  {
+    "deckId": 8,
+    "title": "Deck 8",
+    "wordCount": 50,
+    "topThemes": [
+      "Departing Secretly / Sudden Change",
+      "Enduring Hardship / Patience",
+      "Excessive / Too Much"
+    ]
+  },
+  {
+    "deckId": 9,
+    "title": "Deck 9",
+    "wordCount": 50,
+    "topThemes": [
+      "Harsh Sound",
+      "Hint / Suggest Vaguely",
+      "Minor / Incidental Importance"
+    ]
+  },
+  {
+    "deckId": 10,
+    "title": "Deck 10",
+    "wordCount": 50,
+    "topThemes": [
+      "Agree / Consent",
+      "Alloy / Mixture",
+      "Anger & Annoyance"
+    ]
+  },
+  {
+    "deckId": 11,
+    "title": "Deck 11",
+    "wordCount": 50,
+    "topThemes": [
+      "Excellence / Model of Perfection",
+      "Expert / Skilled",
+      "Inclination / Tendency"
+    ]
+  },
+  {
+    "deckId": 12,
+    "title": "Deck 12",
+    "wordCount": 50,
+    "topThemes": [
+      "Stingy / Miserly",
+      "Vulgar / Crude",
+      "Wandering / Traveling"
+    ]
+  },
+  {
+    "deckId": 13,
+    "title": "Deck 13",
+    "wordCount": 50,
+    "topThemes": [
+      "Essential Core / Concise and Forceful",
+      "Excessive Patriotism / Bias",
+      "Fear / Timidity"
+    ]
+  },
+  {
+    "deckId": 14,
+    "title": "Deck 14",
+    "wordCount": 50,
+    "topThemes": [
+      "Scarce / Insufficient",
+      "Shortening / Condensing",
+      "Speaking For / Supporting"
+    ]
+  },
+  {
+    "deckId": 15,
+    "title": "Deck 15",
+    "wordCount": 50,
+    "topThemes": [
+      "Conspire",
+      "Continuous, Endless, or Intermittent",
+      "Deeply Instilled / Habitual"
+    ]
+  },
+  {
+    "deckId": 16,
+    "title": "Deck 16",
+    "wordCount": 50,
+    "topThemes": [
+      "Precede / Come Before",
+      "Prevent Beforehand / Make Unnecessary",
+      "Rule / Established Standard"
+    ]
+  },
+  {
+    "deckId": 17,
+    "title": "Deck 17",
+    "wordCount": 50,
+    "topThemes": [
+      "Clear / Transparent",
+      "Combative / Fighting",
+      "Cowardice"
+    ]
+  },
+  {
+    "deckId": 18,
+    "title": "Deck 18",
+    "wordCount": 50,
+    "topThemes": [
+      "Name / Title",
+      "Pain Relief / Numbness",
+      "Passing Through / Spreading Through"
+    ]
+  },
+  {
+    "deckId": 19,
+    "title": "Deck 19",
+    "wordCount": 50,
+    "topThemes": [
+      "Undermining Established Power",
+      "Urgent / Necessary",
+      "Wary / Suspicious"
+    ]
+  },
+  {
+    "deckId": 20,
+    "title": "Deck 20",
+    "wordCount": 50,
+    "topThemes": [
+      "Confirm / State Firmly",
+      "Courage / Spirit Under Pressure",
+      "Courteous / Noble"
+    ]
+  },
+  {
+    "deckId": 21,
+    "title": "Deck 21",
+    "wordCount": 50,
+    "topThemes": [
+      "Firm Determination & Settling Disputes",
+      "Fitting Together",
+      "Flexible & Graceful"
+    ]
+  },
+  {
+    "deckId": 22,
+    "title": "Deck 22",
+    "wordCount": 50,
+    "topThemes": [
+      "Model Example or Pattern",
+      "Moral Corruption",
+      "Moral Integrity & Principled Character"
+    ]
+  },
+  {
+    "deckId": 23,
+    "title": "Deck 23",
+    "wordCount": 50,
+    "topThemes": [
+      "Reason & Reasoning",
+      "Refuge / Sanctuary",
+      "Refuse / Hesitate"
+    ]
+  },
+  {
+    "deckId": 24,
+    "title": "Deck 24",
+    "wordCount": 50,
+    "topThemes": [
+      "Take the Place Of",
+      "Tangible vs. Intangible (Contrast)",
+      "Temper & Temperance"
+    ]
+  },
+  {
+    "deckId": 25,
+    "title": "Deck 25",
+    "wordCount": 50,
+    "topThemes": [
+      "Against Intuition",
+      "Agile / Quick",
+      "Agree / Match"
+    ]
+  },
+  {
+    "deckId": 26,
+    "title": "Deck 26",
+    "wordCount": 50,
+    "topThemes": [
+      "Begin",
+      "Behavior / Conduct",
+      "Belief / Creed"
+    ]
+  },
+  {
+    "deckId": 27,
+    "title": "Deck 27",
+    "wordCount": 50,
+    "topThemes": [
+      "Cautious",
+      "Censor / Remove",
+      "Central / Important"
+    ]
+  },
+  {
+    "deckId": 28,
+    "title": "Deck 28",
+    "wordCount": 50,
+    "topThemes": [
+      "Crack / Split",
+      "Crawl / Debase Oneself",
+      "Critical Point in Time"
+    ]
+  },
+  {
+    "deckId": 29,
+    "title": "Deck 29",
+    "wordCount": 50,
+    "topThemes": [
+      "Disagreeing Person",
+      "Disapprove",
+      "Discard"
+    ]
+  },
+  {
+    "deckId": 30,
+    "title": "Deck 30",
+    "wordCount": 50,
+    "topThemes": [
+      "Exaggerated Portrait",
+      "Exaggeration",
+      "Exceptional / Unique"
+    ]
+  },
+  {
+    "deckId": 31,
+    "title": "Deck 31",
+    "wordCount": 50,
+    "topThemes": [
+      "Firmness / Solidity",
+      "Fit Together",
+      "Flamboyant Style & Confidence"
+    ]
+  },
+  {
+    "deckId": 32,
+    "title": "Deck 32",
+    "wordCount": 50,
+    "topThemes": [
+      "Guilt / Remorse",
+      "Hairy",
+      "Halt / Seize"
+    ]
+  },
+  {
+    "deckId": 33,
+    "title": "Deck 33",
+    "wordCount": 50,
+    "topThemes": [
+      "Indifferent to Culture or the Arts",
+      "Indirect",
+      "Ineffective Remedy"
+    ]
+  },
+  {
+    "deckId": 34,
+    "title": "Deck 34",
+    "wordCount": 50,
+    "topThemes": [
+      "Limit / Confine",
+      "List / Specify",
+      "Listen"
+    ]
+  },
+  {
+    "deckId": 35,
+    "title": "Deck 35",
+    "wordCount": 50,
+    "topThemes": [
+      "Motivation",
+      "Mournful Poem",
+      "Move Heavily / Awkwardly"
+    ]
+  },
+  {
+    "deckId": 36,
+    "title": "Deck 36",
+    "wordCount": 50,
+    "topThemes": [
+      "Originate From",
+      "Ornamental Design",
+      "Out of Time / Place"
+    ]
+  },
+  {
+    "deckId": 37,
+    "title": "Deck 37",
+    "wordCount": 50,
+    "topThemes": [
+      "Presenting a Problem",
+      "Pretend",
+      "Pretend Attack"
+    ]
+  },
+  {
+    "deckId": 38,
+    "title": "Deck 38",
+    "wordCount": 50,
+    "topThemes": [
+      "Related to Taste",
+      "Related to Weaving / Female",
+      "Relating to Apes or Monkeys"
+    ]
+  },
+  {
+    "deckId": 39,
+    "title": "Deck 39",
+    "wordCount": 50,
+    "topThemes": [
+      "Selective / Diverse Sources",
+      "Selective Breeding Study",
+      "Self-Defeating"
+    ]
+  },
+  {
+    "deckId": 40,
+    "title": "Deck 40",
+    "wordCount": 50,
+    "topThemes": [
+      "Skilled / Competent",
+      "Skilled Storyteller",
+      "Small in Degree / Minor Insult"
+    ]
+  },
+  {
+    "deckId": 41,
+    "title": "Deck 41",
+    "wordCount": 50,
+    "topThemes": [
+      "Support Structure",
+      "Suppress / Crush",
+      "Suppress / Reject Forcefully"
+    ]
+  },
+  {
+    "deckId": 42,
+    "title": "Deck 42",
+    "wordCount": 50,
+    "topThemes": [
+      "Unable to Be Affected",
+      "Unassuming / Not Boastful",
+      "Unaware / Not Noticing"
+    ]
+  },
+  {
+    "deckId": 43,
+    "title": "Deck 43",
+    "wordCount": 22,
+    "topThemes": [
+      "Waste Matter",
+      "Wave Threateningly",
+      "Weakness / Fragility"
+    ]
+  }
+]
