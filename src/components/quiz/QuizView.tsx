@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { AlignLeft, BookA, Play, Timer, Type } from 'lucide-react';
+import { AlignLeft, BookA, Check, Layers, Play, Timer, Type } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { PoolSelect } from '@/components/PoolSelect';
@@ -11,6 +11,7 @@ import { QuizRunner, type QuizOutcome } from '@/components/quiz/QuizRunner';
 import { QuizResults } from '@/components/quiz/QuizResults';
 import { QUIZ_FORMATS, type QuizFormat } from '@/lib/quiz-engine';
 import { parsePool, poolLabel, poolToQuery, resolvePool } from '@/lib/pools';
+import { DECKS } from '@/lib/vocab';
 import { cn, shuffle } from '@/lib/utils';
 import { useVocabStore } from '@/store/useVocabStore';
 import type { VocabWord } from '@/types/vocab';
@@ -77,6 +78,10 @@ function QuizController({
     [paramString, hasHydrated, lastActiveDeck],
   );
   const [phase, setPhase] = useState<Phase>({ name: 'lobby' });
+  const [deckPickerOpen, setDeckPickerOpen] = useState(false);
+  const [selectedDeckIds, setSelectedDeckIds] = useState<number[]>(() =>
+    spec.kind === 'decks' ? spec.deckIds : spec.kind === 'deck' ? [spec.deckId] : [],
+  );
 
   const poolWords = useMemo(() => resolvePool(spec, progress), [spec, progress]);
   const counts = useMemo(() => {
@@ -144,10 +149,92 @@ function QuizController({
               onChange={(next) => router.replace(`/quiz?${poolToQuery(next)}`, { scroll: false })}
               className="w-full sm:w-80"
             />
+            <Button
+              variant={spec.kind === 'decks' || deckPickerOpen ? 'primary' : 'outline'}
+              onClick={() => {
+                if (!deckPickerOpen) {
+                  setSelectedDeckIds(spec.kind === 'decks' ? spec.deckIds : spec.kind === 'deck' ? [spec.deckId] : []);
+                }
+                setDeckPickerOpen((open) => !open);
+              }}
+            >
+              <Layers className="h-4 w-4" /> Choose multiple decks
+            </Button>
             <span className="font-mono text-xs text-zinc-500">
               {hasHydrated ? poolWords.length.toLocaleString() : '—'} words in {poolLabel(spec)}
             </span>
           </div>
+          {deckPickerOpen && (
+            <div className="mt-4 rounded-xl border border-line p-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-sm font-medium">Select decks to include</p>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedDeckIds(DECKS.map((deck) => deck.deckId))}
+                    className="text-xs font-medium text-violet-600 hover:underline dark:text-violet-400"
+                  >
+                    Select all
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedDeckIds([])}
+                    className="text-xs font-medium text-zinc-500 hover:underline"
+                  >
+                    Clear
+                  </button>
+                </div>
+              </div>
+              <div className="mt-3 grid max-h-56 grid-cols-2 gap-1 overflow-y-auto sm:grid-cols-3 lg:grid-cols-4">
+                {DECKS.map((deck) => {
+                  const checked = selectedDeckIds.includes(deck.deckId);
+                  return (
+                    <label
+                      key={deck.deckId}
+                      className="flex cursor-pointer items-center gap-2 rounded-lg px-2.5 py-2 text-sm transition hover:bg-zinc-100 dark:hover:bg-white/5"
+                    >
+                      <input
+                        type="checkbox"
+                        checked={checked}
+                        onChange={() =>
+                          setSelectedDeckIds((ids) =>
+                            checked ? ids.filter((id) => id !== deck.deckId) : [...ids, deck.deckId].sort((a, b) => a - b),
+                          )
+                        }
+                        className="h-4 w-4 accent-violet-600"
+                      />
+                      <span className="truncate">Deck {deck.deckId}</span>
+                      <span className="ml-auto font-mono text-[10px] text-zinc-400">{deck.wordCount}</span>
+                    </label>
+                  );
+                })}
+              </div>
+              <div className="mt-3 flex items-center justify-between gap-2 border-t border-line pt-3">
+                <span className="font-mono text-xs text-zinc-500">
+                  {selectedDeckIds.length} deck{selectedDeckIds.length === 1 ? '' : 's'} selected
+                </span>
+                <div className="flex gap-2">
+                  <Button variant="ghost" size="sm" onClick={() => setDeckPickerOpen(false)}>
+                    Cancel
+                  </Button>
+                  <Button
+                    size="sm"
+                    disabled={selectedDeckIds.length === 0}
+                    onClick={() => {
+                      const next =
+                        selectedDeckIds.length === 1
+                          ? { kind: 'deck' as const, deckId: selectedDeckIds[0] }
+                          : { kind: 'decks' as const, deckIds: selectedDeckIds };
+                      router.replace(`/quiz?${poolToQuery(next)}`, { scroll: false });
+                      setDeckPickerOpen(false);
+                    }}
+                  >
+                    <Check className="h-3.5 w-3.5" /> Apply decks
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
         </Section>
 
         <Section step="2" title="Format">

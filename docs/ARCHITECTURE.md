@@ -34,7 +34,7 @@ flowchart LR
 | `src/data/` | Generated `vocab.json` and `decks.json` (committed) |
 | `src/types/vocab.ts` | Shared domain types |
 | `src/lib/vocab.ts` | Word indexes (`WORD_BY_ID`, `WORD_BY_TEXT`, `WORDS_BY_DECK`) and stem matching (`findWordRegex`) |
-| `src/lib/pools.ts` | Word pools (deck / weak / starred / all / custom IDs) ↔ URL query |
+| `src/lib/pools.ts` | Word pools (deck / multiple decks / weak / starred / all / custom IDs) ↔ URL query |
 | `src/lib/quiz-engine.ts` | Question building, smart distractors, cloze blanking, combo multipliers |
 | `src/lib/speech.ts` | Web Speech API pronunciation |
 | `src/lib/supabase.ts` | Optional client and progress/stats read/write |

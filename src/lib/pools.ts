@@ -3,6 +3,7 @@ import { DECKS, TOTAL_DECKS, WORDS, WORD_BY_ID, getDeckWords } from '@/lib/vocab
 
 export type PoolSpec =
   | { kind: 'deck'; deckId: number }
+  | { kind: 'decks'; deckIds: number[] }
   | { kind: 'weak' }
   | { kind: 'starred' }
   | { kind: 'all' }
@@ -13,6 +14,13 @@ const MAX_CUSTOM_IDS = 500;
 export function parsePool(params: URLSearchParams, fallbackDeck = 1): PoolSpec {
   const pool = params.get('pool');
   if (pool === 'weak' || pool === 'starred' || pool === 'all') return { kind: pool };
+  if (pool === 'decks') {
+    const deckIds = [...new Set((params.get('decks') ?? '')
+      .split(',')
+      .map(Number)
+      .filter((id) => Number.isInteger(id) && id >= 1 && id <= TOTAL_DECKS))].sort((a, b) => a - b);
+    if (deckIds.length > 0) return { kind: 'decks', deckIds };
+  }
   if (pool === 'custom') {
     const ids = (params.get('ids') ?? '')
       .split(',')
@@ -30,6 +38,8 @@ export function poolToQuery(spec: PoolSpec): string {
   switch (spec.kind) {
     case 'deck':
       return `deck=${spec.deckId}`;
+    case 'decks':
+      return `pool=decks&decks=${spec.deckIds.join(',')}`;
     case 'custom':
       return `pool=custom&ids=${spec.ids.join(',')}`;
     default:
@@ -45,6 +55,8 @@ export function poolLabel(spec: PoolSpec): string {
   switch (spec.kind) {
     case 'deck':
       return `Deck ${spec.deckId}`;
+    case 'decks':
+      return spec.deckIds.length <= 4 ? `Decks ${spec.deckIds.join(', ')}` : `${spec.deckIds.length} Decks`;
     case 'weak':
       return 'Still Learning';
     case 'starred':
@@ -60,6 +72,10 @@ export function resolvePool(spec: PoolSpec, progress: Record<number, UserWordPro
   switch (spec.kind) {
     case 'deck':
       return getDeckWords(spec.deckId);
+    case 'decks': {
+      const selected = new Set(spec.deckIds);
+      return WORDS.filter((w) => selected.has(w.deckId));
+    }
     case 'weak':
       return WORDS.filter((w) => progress[w.id]?.status === 'learning');
     case 'starred':

@@ -111,3 +111,4 @@ These are incremental features that build on the current app. Each one notes wha
 - Supabase auth (email + Google) and cross-device sync; Vercel deployment.
 - Stable word IDs and multi-file word banks.
 - Logo, favicon, Apple touch icon, and privacy page.
+- Multi-deck quizzes (`/quiz?pool=decks&decks=1,2,5`).

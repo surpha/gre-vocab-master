@@ -2,10 +2,12 @@
 
 import { Select } from '@/components/ui/input';
 import { DECKS } from '@/lib/vocab';
-import type { PoolSpec } from '@/lib/pools';
+import { poolLabel, type PoolSpec } from '@/lib/pools';
 
 export function poolValue(spec: PoolSpec): string {
-  return spec.kind === 'deck' ? `deck:${spec.deckId}` : spec.kind;
+  if (spec.kind === 'deck') return `deck:${spec.deckId}`;
+  if (spec.kind === 'decks') return 'decks';
+  return spec.kind;
 }
 
 export function valueToPool(value: string): PoolSpec | null {
@@ -37,6 +39,7 @@ export function PoolSelect({
       aria-label="Word pool"
       className={className}
     >
+      {spec.kind === 'decks' && <option value="decks">{poolLabel(spec)}</option>}
       {spec.kind === 'custom' && <option value="custom">{spec.ids.length} Selected Words</option>}
       <optgroup label="Smart pools">
         <option value="weak">Still Learning ({counts.weak})</option>
